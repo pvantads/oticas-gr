@@ -1,0 +1,131 @@
+/* Variáveis Globais */
+:root {
+    /* --- COR AZUL PRINCIPAL --- */
+    /* !!! IMPORTANTE: SUBSTITUA '#2a7ae2' pela cor HEX exata do azul do seu logotipo !!! */
+    /* Você pode usar um color picker online ou inspecionar o logo se tiver a imagem */
+    --otica-gr-blue: #2a7ae2; /* <--- SUBSTITUA ESTA COR */
+  
+    /* Outras cores se necessário */
+    --whatsapp-green: #25d366;
+    --whatsapp-green-darker: #128C7E;
+    --footer-bg: #212529; /* Cor padrão bg-dark do Bootstrap */
+    --footer-text: #ffffff;
+    --footer-icon-hover: #adb5bd; /* Cor padrão text-secondary do Bootstrap */
+  }
+  
+  /* Estilo Geral */
+  body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh; /* Garante que o footer fique no fim, mesmo com pouco conteúdo */
+  }
+  
+  main {
+      flex: 1; /* Faz o main ocupar o espaço restante */
+  }
+  
+  
+  /* Estilo para o Logotipo */
+  .logo {
+      max-height: 70px; /* Ajuste a altura máxima conforme necessário */
+      width: auto;      /* Mantém a proporção */
+  }
+  
+  /* Aplicação da Cor Azul Principal */
+  #vantagens h2,
+  #contato h2,
+  #contato h3, /* Títulos H3 no contato */
+  #contato h3 i /* Ícones dentro dos H3 no contato */
+   {
+      color: var(--otica-gr-blue);
+  }
+  
+  #vantagens .card-title {
+      color: var(--otica-gr-blue);
+      font-weight: bold;
+  }
+  
+  /* Garante que os cards na seção de vantagens tenham a mesma altura (Bootstrap 5 Flex) */
+  /* As classes d-flex e align-items-stretch foram adicionadas diretamente no HTML nas colunas */
+  /* As classes d-flex, flex-column e w-100 foram adicionadas nos cards */
+  
+  /* Estilo para o Botão Flutuante do WhatsApp */
+  .whatsapp-float {
+      position: fixed;
+      width: 60px;
+      height: 60px;
+      bottom: 40px;
+      right: 40px;
+      background-color: var(--whatsapp-green);
+      color: var(--footer-text); /* Branco */
+      border-radius: 50px;
+      text-align: center;
+      font-size: 30px; /* Tamanho do ícone */
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Sombra suave */
+      z-index: 100; /* Garante que fique sobre outros elementos */
+      display: flex; /* Para centralizar o ícone */
+      align-items: center; /* Centraliza verticalmente */
+      justify-content: center; /* Centraliza horizontalmente */
+      text-decoration: none; /* Remove sublinhado do link */
+      transition: background-color 0.3s ease; /* Efeito suave na troca de cor */
+  }
+  
+  .whatsapp-float:hover {
+      background-color: var(--whatsapp-green-darker);
+      color: var(--footer-text); /* Mantém a cor do ícone */
+  }
+  
+  /* Estilos para Ícones Sociais no Rodapé */
+  footer.bg-dark { /* Especificidade para garantir a cor do rodapé */
+      background-color: var(--footer-bg) !important;
+  }
+  
+  footer .social-icons a {
+      color: var(--footer-text); /* Cor branca para os ícones */
+      font-size: 1.5rem; /* Tamanho dos ícones */
+      transition: color 0.3s ease; /* Efeito suave na troca de cor */
+  }
+  
+  footer .social-icons a:hover {
+      color: var(--footer-icon-hover); /* Cor cinza claro no hover */
+      /* Alternativa: Usar a cor azul no hover */
+      /* color: var(--otica-gr-blue); */
+  }
+  
+  /* Ajustes Responsivos */
+  @media (max-width: 768px) {
+      .whatsapp-float {
+          width: 50px;
+          height: 50px;
+          bottom: 20px;
+          right: 20px;
+          font-size: 25px;
+      }
+      .logo {
+          max-height: 50px;
+      }
+      footer .social-icons a {
+          font-size: 1.3rem; /* Ícones um pouco menores */
+      }
+      /* Centraliza colunas de contato em telas menores */
+      #contato .col-md-6 {
+          text-align: center;
+      }
+       #contato .col-md-6 ul {
+          display: inline-block; /* Para centralizar a lista */
+          text-align: left; /* Alinha o texto da lista à esquerda */
+      }
+  }
+  
+  @media (max-width: 576px) {
+      header {
+          margin-bottom: 1rem !important; /* Menos espaço abaixo do header */
+      }
+       h2.display-5 { /* Reduz tamanho do título principal das seções */
+          font-size: 1.75rem;
+      }
+      #contato h3 { /* Reduz tamanho dos subtítulos */
+          font-size: 1.25rem;
+      }
+  }
+  
